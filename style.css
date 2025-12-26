@@ -1,0 +1,82 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+#top{
+    background: linear-gradient(45deg , rgb(119, 255, 119),rgb(66, 63, 63),rgb(131, 255, 131));
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 10px;
+
+}
+main{
+    background: linear-gradient(12deg,rgb(119, 255, 119),black,rgb(119, 255, 119));
+    height:900px;
+}
+#outer{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+#ID,#PASS,input{
+    border-start-start-radius: 20px;
+    border-start-end-radius: 20px;
+    border-end-end-radius: 20px;
+    border-end-start-radius: 20px;
+    text-align: center;
+    height: 50px;
+    width: 250px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    backdrop-filter: initial;
+}
+#ID,#PASS,input:hover{
+    border-style: groove;
+}
+#con{
+    display:flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+
+}
+#sub{
+    height: 60px;
+    width:90px;
+    
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-start-start-radius: 20px;
+    border-start-end-radius: 20px;
+    border-end-end-radius: 20px;
+    border-end-start-radius: 20px;
+}
+#sub:hover{
+    background-color: rgba(127, 255, 212, 0.694);
+    border-style: groove;
+}
+#inner{
+    background:linear-gradient(-45deg,rgba(105, 255, 128, 0.516),rgba(203, 4, 203, 0.322));
+    border: 4px black solid;
+    border-radius: 20px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#inner:hover{
+    transform: scale(1.2,1.2);
+    transform: skewX(1.2);
+    border-style:groove;
+}
+#topic{
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Lucida Handwriting', cursive;
+    color: rgb(0, 0, 0);
+}
