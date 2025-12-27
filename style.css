@@ -73,10 +73,25 @@ main{
     transform: scale(1.2,1.2);
     transform: skewX(1.2);
     border-style:groove;
+    filter: drop-shadow(10px 5px 5px rgb(0, 255, 0));
 }
 #topic{
     font-weight: bold;
     font-size: 40px;
     font-family: 'Lucida Handwriting', cursive;
     color: rgb(0, 0, 0);
+}
+#topic,#innertext,#logo{
+    animation: okay 2s ease-in-out 1ms infinite alternate-reverse;
+}
+@keyframes okay {
+    from{
+        filter: drop-shadow( 5px 2px 5px rgb(25, 255, 217));
+        color: black;
+    }
+    to{
+        filter: drop-shadow( 5px 2px 5px rgb(142, 5, 222));
+        color: white;
+    }
+    
 }
