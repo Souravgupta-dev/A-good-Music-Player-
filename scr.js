@@ -4,7 +4,7 @@ const pla=document.getElementById("playBtn");
 const nextbtn=document.getElementById("nextBtn");
 const msg=document.getElementById("mssg");
 const imga=document.getElementById("myimage");
-const images=["binding.jpg","i thik love.jpg","die.jpg","expresso.jpg","let me.jpg","nolie.jpg","one of the firl.jpg","popular.jpg","shinonuga.jpg","starboy.jpg","summer.jpg","tosweet.jpg","Screenshot 2025-12-26 133916.png"];
+const images=["binding.jpg","i thik love.jpg","die.jpg","expresso.jpg","let me.jpg","nolie.jpg","one of the firl.jpg","popular.jpg","shinonuga.jpg","starboy.jpg","summer.jpg","tosweet.jpg","Screenshot 2025-12-26 133916.png","night.jpg"];
 const songs = [
   { name: "Binding_Light", src: "Blinding Lights_spotdown.org.mp3" },
   { name: "I_Think_They_Call_This_Love", src: "I Think They Call This Love - Cover_spotdown.org.mp3" },
@@ -18,7 +18,8 @@ const songs = [
   { name: "Star_Boy", src: "Starboy_spotdown.org.mp3" },
   { name: "Summertime Sadness", src: "Summertime Sadness_spotdown.org.mp3" },
   { name: "Too Sweet", src: "Too Sweet_spotdown.org.mp3" },
-  {name:"Everything_I_Do",src:"(Everything I Do) I Do It For You_spotdown.org.mp3"}
+  {name:"Everything_I_Do",src:"(Everything I Do) I Do It For You_spotdown.org.mp3"},
+  {name:"Night_Changes",src:"Night Changes_spotdown.org.mp3"}
 ];
 
 let index = 0;
@@ -66,4 +67,5 @@ audio.addEventListener("ended", () => {
 });
 
 // First load
+
 loadSong(index);
