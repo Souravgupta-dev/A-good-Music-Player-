@@ -1,4 +1,3 @@
-
 const audio=document.getElementById("myAudio");
 const pla=document.getElementById("playBtn");
 const nextbtn=document.getElementById("nextBtn");
@@ -9,6 +8,8 @@ const volm=document.getElementById("volume");
 const mute=document.getElementById("mute");
 const loop=document.getElementById("loop");
 const onimg=document.querySelectorAll(".son");
+const onhindimg=document.querySelectorAll(".hind");
+
 const images=["binding.jpg","i thik love.jpg","die.jpg","expresso.jpg","let me.jpg","nolie.jpg","one of the firl.jpg","popular.jpg","shinonuga.jpg","starboy.jpg","summer.jpg","tosweet.jpg","Screenshot 2025-12-26 133916.png","night.jpg"];
 const songs = [
   { name: "Binding_Light", src: "Blinding Lights_spotdown.org.mp3" },
@@ -26,19 +27,29 @@ const songs = [
   {name:"Everything_I_Do",src:"(Everything I Do) I Do It For You_spotdown.org.mp3"},
   {name:"Night_Changes",src:"Night Changes_spotdown.org.mp3"}
 ];
-
+const hindsongs=[
+  {name:"Tu_Hai_Kahan", src:"Tu_haikahan.mp4", imgaa:"tuhai.png"}
+];
+const hindimgs=["tuhai.png"];
 let index = 0;
+
 // Load song
 function loadSong(i) {
   audio.src = songs[i].src;
   msg.textContent = songs[i].name;
   imga.src=images[i];
-  
 }
-
+onhindimg.forEach((hindimg,iin)=>{
+  hindimg.addEventListener("click",()=>{
+    audio.src=hindsongs[iin].src;
+    msg.textContent = hindsongs[iin].name;
+    imga.src=hindimgs[iin];
+    playBtn.textContent = "⏸ Pause";
+    audio.play();
+  });
+});
 onimg.forEach((img,indexs)=>{
   img.addEventListener("click",()=>{
-    
     audio.src=songs[indexs].src;
     msg.textContent = songs[indexs].name;
     imga.src=images[indexs];
@@ -58,6 +69,15 @@ playBtn.addEventListener("click", () => {
     playBtn.textContent = "▶ Play";
   }
 });
+//HindiPanel Ke Liye
+const hinpanel=document.getElementById("hindipanel");
+document.getElementById("hindi").onclick=()=>{
+  hinpanel.classList.add("active");
+};
+document.getElementById("clase").onclick=()=>{
+  hinpanel.classList.remove("active");
+};
+//EnglishPanel ke Liye
 const panel = document.getElementById("panel");
 
 document.getElementById("open").onclick = () => {
@@ -67,6 +87,14 @@ document.getElementById("open").onclick = () => {
 document.getElementById("close").onclick = () => {
   panel.classList.remove("active");
 };
+//Phonk Panel Ke Liye
+const phpanel=document.getElementById("phonkpanel");
+document.getElementById("phonk").onclick=()=>{
+  phpanel.classList.add("active");
+};
+document.getElementById("phonkclose").onclick=()=>{
+  phpanel.classList.remove("active");
+}
 
 
 
