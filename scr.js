@@ -3,7 +3,12 @@ const audio=document.getElementById("myAudio");
 const pla=document.getElementById("playBtn");
 const nextbtn=document.getElementById("nextBtn");
 const msg=document.getElementById("mssg");
+const re=document.getElementById("rewind");
 const imga=document.getElementById("myimage");
+const volm=document.getElementById("volume");
+const mute=document.getElementById("mute");
+const loop=document.getElementById("loop");
+const onimg=document.querySelectorAll(".son");
 const images=["binding.jpg","i thik love.jpg","die.jpg","expresso.jpg","let me.jpg","nolie.jpg","one of the firl.jpg","popular.jpg","shinonuga.jpg","starboy.jpg","summer.jpg","tosweet.jpg","Screenshot 2025-12-26 133916.png","night.jpg"];
 const songs = [
   { name: "Binding_Light", src: "Blinding Lights_spotdown.org.mp3" },
@@ -23,7 +28,6 @@ const songs = [
 ];
 
 let index = 0;
-
 // Load song
 function loadSong(i) {
   audio.src = songs[i].src;
@@ -31,6 +35,18 @@ function loadSong(i) {
   imga.src=images[i];
   
 }
+
+onimg.forEach((img,indexs)=>{
+  img.addEventListener("click",()=>{
+    
+    audio.src=songs[indexs].src;
+    msg.textContent = songs[indexs].name;
+    imga.src=images[indexs];
+    playBtn.textContent = "⏸ Pause";
+    audio.play();
+  });
+});
+
 
 // Play / Pause
 playBtn.addEventListener("click", () => {
@@ -40,6 +56,37 @@ playBtn.addEventListener("click", () => {
   } else {
     audio.pause();
     playBtn.textContent = "▶ Play";
+  }
+});
+const panel = document.getElementById("panel");
+
+document.getElementById("open").onclick = () => {
+  panel.classList.add("active");
+};
+
+document.getElementById("close").onclick = () => {
+  panel.classList.remove("active");
+};
+
+
+
+re.addEventListener("click",()=>{
+  audio.currentTime=0;
+  audio.play();
+});
+volm.addEventListener("input",()=>{
+  audio.volume=volm.value;
+});
+mute.addEventListener("click",()=>{
+  audio.muted=!audio.muted;
+});
+loop.addEventListener("click",()=>{
+  if(!audio.loop){
+    audio.loop=true;
+    loop.innerHTML="LoopON";
+  }else{
+    audio.loop=false;
+    loop.innerHTML="⋈";
   }
 });
 
@@ -67,5 +114,4 @@ audio.addEventListener("ended", () => {
 });
 
 // First load
-
 loadSong(index);
