@@ -2,6 +2,10 @@
     padding: 0%;
     margin: 0%;
 }
+#header{
+    background: linear-gradient(45deg , rgb(119, 255, 119),rgb(66, 63, 63),rgb(131, 255, 131));
+
+}
 #top{
     background: linear-gradient(45deg , rgb(119, 255, 119),rgb(66, 63, 63),rgb(131, 255, 131));
     text-align: center;
@@ -69,6 +73,7 @@ button:hover{
         border-end-start-radius: 50px;
         border-end-end-radius: 20px;
         border-start-start-radius: 10px;
+        background: linear-gradient(46deg,rgb(144, 225, 238),rgb(217, 2, 255),rgb(0, 255, 195));
     
     }
 }
@@ -86,7 +91,7 @@ button:hover{
     padding: 20px;
     
     border-style:groove;
-    animation: box 1.5s ease-in-out 1ms infinite alternate-reverse;
+    animation: box 1.5s ease-in-out 0ms infinite alternate-reverse;
 
 }
 @keyframes box {
@@ -102,13 +107,14 @@ button:hover{
         
     }
     to{
+         background: linear-gradient(46deg,rgb(144, 225, 238),rgb(217, 2, 255),rgb(0, 255, 195));
         color: black;
         border-start-end-radius: 50px;
         border-end-start-radius: 50px;
         border-end-end-radius: 20px;
         border-start-start-radius: 10px;
         filter: drop-shadow(10px 5px 20px orchid);
-        background: linear-gradient(46deg,rgb(144, 225, 238),rgb(217, 2, 255),rgb(0, 255, 195));
+       
     }
     
 }
@@ -121,13 +127,14 @@ main{
     justify-content:center ;
     align-self: flex-start;
     animation: back 2s ease-in-out 0ms infinite  alternate;
+    padding-bottom: 60px;
 }
 @keyframes back {
     from{
         background: linear-gradient(12deg,rgb(119, 255, 119),black,rgb(119, 255, 119));
     }
     to{
-        background: linear-gradient(-22deg,rgb(119, 255, 119),black,rgb(119, 255, 119))
+        background: linear-gradient(46deg,rgb(144, 225, 238),rgb(217, 2, 255),rgb(0, 255, 195));
     }
     
 }
@@ -194,7 +201,44 @@ overflow-y: auto;
   z-index: 1;
   transition: right 0.3s ease-in-out;
 }
+#hindipanel{
+    cursor: pointer;
+
+overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: -400px;   /* hidden */
+  width: 300px;
+  height: 100%;
+  background: #111;
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  transition: right 0.3s ease-in-out;
+}
+#hindipanel.active{
+    right: 0;
+}
 
 #panel.active {
   right: 0; 
+}
+#phonkpanel{
+    cursor: pointer;
+
+overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: -400px;   /* hidden */
+  width: 300px;
+  height: 100%;
+  background: #111;
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  transition: right 0.3s ease-in-out;
+
+}
+#phonkpanel.active{
+    right: 0;
 }
