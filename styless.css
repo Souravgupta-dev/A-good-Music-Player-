@@ -28,6 +28,7 @@ p,pre,img{
     }
 }
 img{
+    width: fit-content;
     border-radius: 5px;
     box-shadow: 2px 2px 5px black;
 }
@@ -41,7 +42,8 @@ button{
     border-end-end-radius: 5px;
     border-start-start-radius: 5px;
     height: 40px;
-    width: 100px;
+    width: 100%;
+    max-width: 100px;
     animation: but 2s ease-in-out 2ms infinite alternate-reverse;
 
 }
@@ -80,7 +82,7 @@ button:hover{
     font-family: cursive;
     border: 2px black solid;
     max-height: max-content;
-    max-width: max-content;
+    max-width: fit-content;
     padding: 20px;
     
     border-style:groove;
@@ -111,30 +113,34 @@ button:hover{
     
 }
 main{
-    background: linear-gradient(12deg,rgb(119, 255, 119),black,rgb(119, 255, 119));
-    height:900px;
-    display: wrap;
+    
+    height:max-content;
+    width: fit-content;
+    display:flex;
+    flex-direction: column;
     justify-content:center ;
+    align-self: flex-start;
+    animation: back 2s ease-in-out 0ms infinite  alternate;
 }
-@media(width:300px){
-    main{
-        justify-self:inherit ;
+@keyframes back {
+    from{
+        background: linear-gradient(12deg,rgb(119, 255, 119),black,rgb(119, 255, 119));
     }
+    to{
+        background: linear-gradient(-22deg,rgb(119, 255, 119),black,rgb(119, 255, 119))
+    }
+    
 }
+
 #welcome-text{
     text-align: center;
     font-size: 70px;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-top: 50px;
     color: white;
+    scrollbar-width: auto;
 }
-#con{
-    display:flex;
-    align-items: center;
-    gap: 20px;
-    flex-direction: column;
 
-}
 #sub{
     height: 60px;
     width:90px;
@@ -154,11 +160,13 @@ main{
     background:linear-gradient(-45deg,rgba(105, 255, 128, 0.516),rgba(203, 4, 203, 0.322));
     border: 4px black solid;
     border-radius: 20px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 300px;
     text-align: center;
     font-size: xx-large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 #inner:hover{
     transform: scale(1.2,1.2);
@@ -170,4 +178,23 @@ main{
     font-size: 40px;
     font-family: 'Lucida Handwriting', cursive;
     color: rgb(0, 0, 0);
+}
+#panel {
+    cursor: pointer;
+
+overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: -400px;   /* hidden */
+  width: 300px;
+  height: 100%;
+  background: #111;
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  transition: right 0.3s ease-in-out;
+}
+
+#panel.active {
+  right: 0; 
 }
